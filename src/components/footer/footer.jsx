@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-box">
-        <div className="login-icon">
+        <div className="login-icon wobble-ver-left">
           <KeyIcon />
         </div>
         <h4>
