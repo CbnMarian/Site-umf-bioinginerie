@@ -1,0 +1,21 @@
+.accordion-box {
+  width: 90vw;
+  margin: 5rem auto;
+  background-color: white;
+  border-radius: 0.25rem;
+  padding: 2.5rem 2rem;
+  max-width: 920px;
+  display: grid;
+  gap: 1rem 2rem;
+}
+
+.accordion-box h3 {
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}

@@ -2,6 +2,7 @@ import "./team-presentation.css";
 import member1 from "../../assets/Verestiuc.png";
 import member2 from "../../assets/blank.png";
 import "react-multi-carousel/lib/styles.css";
+import Footer from "../footer/footer";
 
 const Team = () => {
   return (
@@ -72,6 +73,7 @@ const Team = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 };
