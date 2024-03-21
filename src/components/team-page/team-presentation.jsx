@@ -3,10 +3,12 @@ import member1 from "../../assets/Verestiuc.png";
 import member2 from "../../assets/blank.png";
 import "react-multi-carousel/lib/styles.css";
 import Footer from "../footer/footer";
+import Header from "../header/header";
 
 const Team = () => {
   return (
     <section id="container">
+      <Header />
       <div id="main">
         <div className="team-leader">
           <h1 className="title">SCIENTIFIC TEAM</h1>
