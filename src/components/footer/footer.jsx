@@ -1,10 +1,13 @@
 import "./footer.css";
+import KeyIcon from "@mui/icons-material/Key";
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer-box">
-        <p>🔑</p>
+        <div className="login-icon wobble-ver-left">
+          <KeyIcon />
+        </div>
         <h4>
           © Universitatea de Medicina si Farmacie "Grigore T. Popa" Iasi 2023
         </h4>

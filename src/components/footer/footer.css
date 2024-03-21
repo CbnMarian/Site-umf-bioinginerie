@@ -4,10 +4,9 @@ footer {
   font-size: 18px;
   padding: 35px;
   text-align: center;
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  position: relative;
+  clear: both;
+  margin-top: -100px;
 }
 
 footer h4 {
@@ -17,4 +16,34 @@ footer h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.login-icon {
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-icon:hover {
+  color: #b99b64;
+  animation: rotate-icon 1.5s forwards;
+}
+
+@keyframes rotate-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-45deg);
+  }
+  60% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

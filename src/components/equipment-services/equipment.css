@@ -1,0 +1,27 @@
+.services-equipment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 3rem;
+}
+.services h3,
+.equipment h3 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.question {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 700px;
+}
+.question p {
+  margin: 0;
+}
+.question-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
