@@ -1,0 +1,49 @@
+footer {
+  background-color: rgb(3, 40, 35);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  padding: 35px;
+  text-align: center;
+  position: relative;
+  clear: both;
+  margin-top: -100px;
+}
+
+footer h4 {
+  font-size: 0.7em;
+}
+.footer-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-icon {
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-icon:hover {
+  color: #b99b64;
+  animation: rotate-icon 1.5s forwards;
+}
+
+@keyframes rotate-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-45deg);
+  }
+  60% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
