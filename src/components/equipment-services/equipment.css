@@ -1,21 +1,27 @@
-.accordion-box {
-  width: 90vw;
-  margin: 5rem auto;
-  background-color: white;
-  border-radius: 0.25rem;
-  padding: 2.5rem 2rem;
-  max-width: 920px;
-  display: grid;
-  gap: 1rem 2rem;
+.services-equipment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 3rem;
+}
+.services h3,
+.equipment h3 {
+  font-size: 24px;
+  text-align: center;
 }
 
-.accordion-box h3 {
-  line-height: 1.2;
-  font-weight: 500;
+.question {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 700px;
 }
-
-.section {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: 1170px;
+.question p {
+  margin: 0;
+}
+.question-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
