@@ -1,5 +1,7 @@
 import "./header.css";
 import logo from "../../assets/logo.png";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -7,26 +9,26 @@ function Header() {
       <nav>
         <ul className="nav-bar">
           <li className="logo">
-            <a href="">
+            <Link to="/">
               <img src={logo} className="App-logo" alt="logo" />
-            </a>
+            </Link>
           </li>
           <input type="checkbox" id="check" />
           <span className="menu">
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/Contact">Contact</Link>
             </li>
             <li>
-              <a href="#test">Services and equipment</a>
+              <Link to="/equipment">Services and equipment</Link>
             </li>
             <li>
-              <a href="#test">Projects</a>
+              <Link to="/Projects">Projects</Link>
             </li>
             <li>
-              <a href="#test">Team</a>
+              <Link to="/Team">Team</Link>
             </li>
             <label htmlFor="check" className="close-menu">
               <i className="fas fa-times"></i>

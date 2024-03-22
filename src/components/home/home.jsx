@@ -1,37 +1,22 @@
+import Footer from "../footer/footer";
+import Header from "../header/header";
+
 const Home = () => {
   return (
-    <div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-      <div>text</div>
-    </div>
+    <section id="container">
+      <Header />
+      <div name="Home">
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+      </div>
+      <Footer />
+    </section>
   );
 };
 
