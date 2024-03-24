@@ -27,7 +27,7 @@
 }
 
 .column-left h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   font-size: 3rem;
 }
 
@@ -39,17 +39,18 @@
 
 button {
   padding: 1rem 3rem;
-  font-size: 1rem;
+  font-size: 1.4rem;
   border: none;
   color: #b99b64;
   background: rgba(1, 77, 68);
   cursor: pointer;
   border-radius: 50px;
+  margin-top: 3rem;
 }
 
 button:hover {
   background: #b99b64;
-  color: #000000;
+  color: white;
 }
 
 .column-right {

@@ -5,6 +5,9 @@ import Lab3 from "../../assets/lab3.png";
 import Lab4 from "../../assets/lab4.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Footer from "../footer/footer";
+import Header from "../header/header";
+import React, { useEffect } from "react";
 
 const Home = () => {
   const responsive = {
@@ -25,8 +28,33 @@ const Home = () => {
       items: 1,
     },
   };
+
+  useEffect(() => {
+    const resizeHandler = () => {
+      const title = document.querySelector(".hero-container .column-left h1");
+      if (title) {
+        const computedStyle = getComputedStyle(title);
+        const titleHeight = parseFloat(computedStyle.height);
+
+        const underline = title.previousElementSibling;
+        if (underline) {
+          underline.style.height = `${titleHeight}px`;
+        }
+      }
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
+    resizeHandler(); // Apelul inițial pentru a seta sublinia
+
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
+
   return (
     <section id="container">
+      <Header />
       <div id="main">
         <section class="hero">
           <div class="hero-container">
@@ -40,7 +68,7 @@ const Home = () => {
                 construction of scaffolds for regenerative medicine;
                 biocompatibility; cellular and acellular engineering of soft and
                 hard tissues; nanotechnologies for diagnosis and therapy; in
-                vitro models for drug delivery
+                vitro models for drug delivery.
               </p>
               <button>Learn More</button>
             </div>
@@ -68,6 +96,7 @@ const Home = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </section>
   );
 };
