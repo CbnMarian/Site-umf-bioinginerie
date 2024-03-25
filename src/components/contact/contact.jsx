@@ -1,20 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
-import { GoogleApiWrapper } from "google-maps-react";
 import "./contact.css";
 
 function Contact(props) {
-  const [showInfoWindow, setShowInfoWindow] = useState(false);
-
-  const onMarkerClick = () => {
-    setShowInfoWindow(true);
-  };
-
-  const onInfoWindowClose = () => {
-    setShowInfoWindow(false);
-  };
-
   return (
     <section id="container">
       <Header />
