@@ -64,6 +64,4 @@ function Contact(props) {
     </div>
   );
 }
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyCIWCX44ckWYBXb7WP26t5E10mRRcO704U",
-})(Contact);
+export default Contact;
