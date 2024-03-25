@@ -1,0 +1,100 @@
+.location {
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.contact-info {
+  max-width: 600px;
+  max-height: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e0f2e9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#gmap_canvas {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-info ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.contact-info ul li {
+  font-size: 16px;
+  color: #666;
+  list-style-type: disc;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info i.fa-solid {
+  color: #b99b64;
+}
+
+.contact-info i.fa-solid,
+.contact-info ul li::before {
+  color: #b99b64;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-info {
+    max-width: 95%;
+    padding: 1px;
+  }
+}
+
+.line {
+  width: 100px;
+  height: 4px;
+  background-color: rgba(1, 77, 68);
+  margin: 5px auto;
+}
+
+@media screen and (max-width: 700px) {
+  .contact-info h2 {
+    font-size: 20px;
+  }
+  .contact-info p {
+    font-size: 14px;
+  }
+  .contact-info ul li {
+    font-size: 14px;
+  }
+}
