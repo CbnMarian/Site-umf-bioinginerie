@@ -1,49 +1,53 @@
 import React, { useState } from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import DataProjects from "./data-projects";
 import "./projects.css";
 
 function Projects() {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [flipCardStates, setFlipCardStates] = useState({});
 
-  const handleCardClick = () => {
-    setIsFlipped(!isFlipped);
+  const toggleFlip = (projectId) => {
+    setFlipCardStates((prevStates) => ({
+      ...prevStates,
+      [projectId]: !prevStates[projectId],
+    }));
   };
 
   return (
     <section>
       <Header />
       <div id="main">
-        {/*  */}
-        <div
-          className={`flip-card ${isFlipped ? "flipped" : ""}`}
-          onClick={handleCardClick}
-        >
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <p>
-                <span>Project-Code:</span> PNCDI-II 132/2014
-              </p>
-              <h4>
-                Suporturi magnetice biomimetice ca strategie alternativa pentru
-                ingineria și repararea tesutului osos – MAGBIOTISS.{" "}
-              </h4>
-            </div>
-            <div className="flip-card-back">
-              <p>
-                <span>Director de proiect:</span> prof. univ. dr. Liliana
-                Vereștiuc.
-              </p>
-              <p>
-                <span>Perioada:</span> 2014 – 2017
-              </p>
-              <p>
-                <span>Buget:</span> 450000 lei.
-              </p>
+        {Object.keys(DataProjects).map((category, index) => (
+          <div key={index}>
+            <h2 className="projects-title">{category}</h2>
+            <div className="card-box">
+              {DataProjects[category].map((project) => (
+                <div
+                  key={`${category}-${project.post_id}`}
+                  className={`flip-card ${
+                    flipCardStates[`${category}-${project.post_id}`]
+                      ? "flipped"
+                      : ""
+                  }`}
+                  onClick={() => toggleFlip(`${category}-${project.post_id}`)}
+                >
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <p>
+                        <span>Project-Code:</span> {project.post_project_code}
+                      </p>
+                      <h4>{project.post_title}</h4>
+                    </div>
+                    <div className="flip-card-back">
+                      <p> {project.post_description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-        {/*  */}
+        ))}
       </div>
       <Footer />
     </section>

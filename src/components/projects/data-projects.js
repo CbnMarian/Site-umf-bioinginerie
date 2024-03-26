@@ -1,5 +1,5 @@
 const DataProjects = {
-  coordonator: [
+  "Proiecte cu finanțare națională - coordonator": [
     {
       post_id: 1,
       post_project_code: "PNCDI-II 132/2014",
@@ -41,7 +41,7 @@ const DataProjects = {
         "Director de proiect: șef lucr. dr. Balan Vera, perioada: 15.09.2020-13.09.2022, buget: 431900 lei",
     },
   ],
-  partener: [
+  "Proiecte cu finanțare națională - partener": [
     {
       post_id: 1,
       post_project_code: "PN-III-P1-1.2-PCCDI2017-0407/2018",
@@ -121,7 +121,7 @@ const DataProjects = {
         "Coordonator: Institutul Național de Cercetare-Dezvoltare pentru Științe Biologice București, buget proiect: 150000 lei. Responsabil partener UMF Iași: prof. univ. dr. Liliana Vereștiuc, perioada: 2001-2004, buget UMF Iași: 40900 lei.",
     },
   ],
-  granturiInterne: [
+  "Granturi interne": [
     {
       post_id: 1,
       post_project_code: "Grant Intern UMF Iași 17075/07.10.2009",
