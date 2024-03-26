@@ -29,49 +29,31 @@ const Team = () => {
           <div className="team-member">
             <img src={member2} alt="Team Member: Alice Smith" />
             <h3>Vera Balan</h3>
-            <div>
-              <p>Description</p>
-            </div>
           </div>
 
           <div className="team-member">
             <img src={member2} alt="Team Member: Alice Smith" />
             <h3>Maria Butnaru</h3>
-            <div>
-              <p>Description</p>
-            </div>
           </div>
 
           <div className="team-member">
             <img src={member2} alt="Team Member: Alice Smith" />
             <h3>Isabella Cobzariu</h3>
-            <div>
-              <p>Description</p>
-            </div>
           </div>
 
           <div className="team-member">
             <img src={member2} alt="Team Member: Alice Smith" />
             <h3>Florina Daniela Ivan</h3>
-            <div>
-              <p>Description</p>
-            </div>
           </div>
 
           <div className="team-member">
             <img src={member2} alt="Team Member: Alice Smith" />
             <h3>Andreea Luca</h3>
-            <div>
-              <p>Description</p>
-            </div>
           </div>
 
           <div className="team-member">
             <img src={member2} alt="Team Member: Alice Smith" />
             <h3>Vlad Ursachi</h3>
-            <div>
-              <p>Description</p>
-            </div>
           </div>
         </div>
       </div>

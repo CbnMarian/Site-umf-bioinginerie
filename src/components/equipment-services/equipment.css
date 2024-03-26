@@ -39,3 +39,8 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.btn {
+  font-size: 16px;
+  margin: 0;
+}
