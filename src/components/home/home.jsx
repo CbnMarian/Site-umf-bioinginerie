@@ -8,6 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const responsive = {
@@ -70,7 +71,9 @@ const Home = () => {
                 hard tissues; nanotechnologies for diagnosis and therapy; in
                 vitro models for drug delivery.
               </p>
-              <button>Learn More</button>
+              <Link to="/About">
+                <button>Learn More</button>
+              </Link>
             </div>
             <Carousel infinite={true} showDots={true} responsive={responsive}>
               <div className="card">

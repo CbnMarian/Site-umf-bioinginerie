@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./components/home/home";
+import About from "./components/about/about";
 import Contact from "./components/contact/contact";
 import Equipment from "./components/equipment-services/equipment";
 import Projects from "./components/projects/projects";
@@ -14,6 +15,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/equipment" element={<Equipment />} />
         <Route path="/projects" element={<Projects />} />
