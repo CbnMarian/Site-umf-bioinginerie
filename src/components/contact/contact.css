@@ -97,4 +97,7 @@
   .contact-info ul li {
     font-size: 14px;
   }
+  .contact-info {
+    margin-bottom: 40px;
+  }
 }
