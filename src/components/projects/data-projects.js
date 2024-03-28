@@ -41,7 +41,7 @@ const DataProjects = {
         "Project Director: Assoc. Prof. Dr. Vera Balan, period: 15.09.2020-13.09.2022, budget: 431,900 lei",
     },
   ],
-  "Proiecte cu finanțare națională - partener": [
+  "Projects with national funding - partner": [
     {
       post_id: 1,
       post_project_code: "PN-III-P1-1.2-PCCDI2017-0407/2018",
@@ -122,7 +122,7 @@ const DataProjects = {
     },
   ],
 
-  "Projects with national funding - partner": [
+  "Internal Grants": [
     {
       post_id: 1,
       post_project_code: "Internal Grant UMF Iași 17075/07.10.2009",
