@@ -78,6 +78,16 @@
     max-width: 95%;
     padding: 1px;
   }
+  .description {
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+  }
+  .hero-container {
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+  }
 }
 
 .line {

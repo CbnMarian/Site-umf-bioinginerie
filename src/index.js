@@ -8,6 +8,7 @@ import Contact from "./components/contact/contact";
 import Equipment from "./components/equipment-services/equipment";
 import Projects from "./components/projects/projects";
 import Team from "./components/team-page/team-presentation";
+import Login from "./components/login/login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path="/equipment" element={<Equipment />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
