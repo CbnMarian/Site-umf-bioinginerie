@@ -46,7 +46,7 @@ const Home = () => {
 
     window.addEventListener("resize", resizeHandler);
 
-    resizeHandler(); // Apelul inițial pentru a seta sublinia
+    resizeHandler();
 
     return () => {
       window.removeEventListener("resize", resizeHandler);
