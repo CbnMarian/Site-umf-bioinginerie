@@ -11,6 +11,11 @@ const Footer = () => {
             <KeyIcon />
           </div>
         </Link>
+        <Link to="/Admin">
+          <div className="login-icon wobble-ver-left">
+            <KeyIcon />
+          </div>
+        </Link>
         <h4>
           © Universitatea de Medicina si Farmacie "Grigore T. Popa" Iasi 2023
         </h4>

@@ -9,6 +9,7 @@ import Equipment from "./components/equipment-services/equipment";
 import Projects from "./components/projects/projects";
 import Team from "./components/team-page/team-presentation";
 import Login from "./components/login/login";
+import Admin from "./components/admin/admin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,6 +23,7 @@ root.render(
         <Route path="/projects" element={<Projects />} />
         <Route path="/team" element={<Team />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
