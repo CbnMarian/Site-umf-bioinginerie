@@ -6,12 +6,12 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-box">
-        <Link to="/Login">
+        <Link to="/Login" className="footer-link">
           <div className="login-icon wobble-ver-left">
             <KeyIcon />
           </div>
         </Link>
-        <Link to="/Admin">
+        <Link to="/Admin" className="footer-link">
           <div className="login-icon wobble-ver-left">
             <KeyIcon />
           </div>
