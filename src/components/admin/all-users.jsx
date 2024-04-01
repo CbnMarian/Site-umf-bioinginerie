@@ -1,51 +1,47 @@
-import DataAdmin from "./data-admin";
+import DataUser from "./data-users";
+import React, { useState } from "react";
 import Menu from "./menu";
 import "./admin.css";
-import React, { useState } from "react";
 
-function Admin() {
-  const [projects, setProjects] = useState(DataAdmin);
+function AllUsers() {
+  const [users, setUsers] = useState(DataUser);
 
-  const handleDeleteProject = (projectId) => {
-    const updatedProjects = projects.filter(
-      (project) => project.project_id !== projectId
-    );
-    setProjects(updatedProjects);
+  const handleDeleteUser = (userId) => {
+    const updatedUsers = users.filter((user) => user.user_id !== userId);
+    setUsers(updatedUsers);
   };
 
   return (
     <section>
       <Menu />
       <div className="table-main">
-        <h2 className="all-projects-title">All Projects</h2>
+        <h2 className="all-projects-title">All Users</h2>
         <div className="table-container">
           <table className="data-table">
             <thead>
               <tr>
                 <td></td>
                 <th>ID</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Status</th>
+                <th>Name</th>
+                <th>CV</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
             </thead>
             <tbody>
-              {projects.map((project, index) => (
+              {users.map((user, index) => (
                 <tr key={index}>
                   <td>
                     <input type="checkbox" />
                   </td>
-                  <td>{project.project_id}</td>
-                  <td>{project.project_title}</td>
-                  <td>{project.project_category}</td>
-                  <td>{project.project_status}</td>
+                  <td>{user.user_id}</td>
+                  <td>{user.user_name}</td>
+                  <td>{user.user_cv}</td>
                   <td className="edit-btn">Edit</td>
                   <td>
                     <div
                       className="delete-btn"
-                      onClick={() => handleDeleteProject(project.project_id)}
+                      onClick={() => handleDeleteUser(user.user_id)}
                     >
                       Delete
                     </div>
@@ -60,4 +56,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AllUsers;
