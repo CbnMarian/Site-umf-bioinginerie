@@ -29,7 +29,6 @@
   grid-template-areas:
     "header header"
     "sidebar main";
-  height: 100vh;
 }
 
 /* Header  */
@@ -54,6 +53,7 @@
   background-color: rgba(1, 77, 68);
   overflow-y: auto;
   transition: all 0.5s;
+  height: 100vh;
 }
 
 .dropdown-content {
@@ -104,6 +104,7 @@
   padding: 20px;
   font-size: 18px;
   margin-bottom: 10px;
+  color: #9e9ea4;
 }
 
 .sidebar-list-item:hover {
@@ -120,4 +121,89 @@
   display: inline !important;
   position: absolute;
   z-index: 12 !important;
+}
+
+/* Tabel */
+.table-container {
+  text-align: center;
+  margin: 0 auto;
+  margin-left: 200px;
+  margin-right: auto;
+  width: 1300px;
+  margin-top: 20px;
+}
+
+.all-projects-title {
+  margin-left: 200px;
+  margin-right: auto;
+  width: 1300px;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.data-table {
+  width: 100%;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.data-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+.edit-btn,
+.delete-btn {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* add-proj-css */
+.form-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+.add-project-title {
+  font-size: 25px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.form-group input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
