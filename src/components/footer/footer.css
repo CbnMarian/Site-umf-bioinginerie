@@ -26,6 +26,10 @@ footer h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+}
+.footer-link {
+  text-decoration: none;
 }
 
 .login-icon:hover {

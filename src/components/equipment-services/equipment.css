@@ -6,7 +6,6 @@
   padding: 2rem 0;
   gap: 3rem;
 }
-
 .services h3,
 .equipment h3 {
   margin: 0;
@@ -28,14 +27,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: rgb(235, 235, 235);
   padding: 10px;
-  width: 100%;
+  width: 800px;
   margin-bottom: 20px;
 }
-
 .question p {
   margin: 0;
 }
-
 .question-box {
   cursor: pointer;
   display: flex;
@@ -47,7 +44,6 @@
   font-size: 16px;
   margin: 0;
 }
-
 @media screen and (max-width: 768px) {
   .services-equipment {
     padding: 1rem;
