@@ -1,16 +1,34 @@
-import DataAdmin from "./data-admin";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Menu from "./menu";
 import "./admin.css";
-import React, { useState } from "react";
 
 function Admin() {
-  const [projects, setProjects] = useState(DataAdmin);
+  const [projects, setProjects] = useState([]);
 
-  const handleDeleteProject = (projectId) => {
-    const updatedProjects = projects.filter(
-      (project) => project.project_id !== projectId
-    );
-    setProjects(updatedProjects);
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  const loadProjects = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/projects");
+      setProjects(response.data);
+    } catch (error) {
+      console.error("Error fetching projects:", error);
+    }
+  };
+
+  const handleDeleteProject = async (projectId) => {
+    try {
+      await axios.delete(`http://localhost:8080/projects/${projectId}`);
+      const updatedProjects = projects.filter(
+        (project) => project.id !== projectId
+      );
+      setProjects(updatedProjects);
+    } catch (error) {
+      console.error("Error deleting project:", error);
+    }
   };
 
   return (
@@ -22,33 +40,26 @@ function Admin() {
           <table className="data-table">
             <thead>
               <tr>
-                <td></td>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th></th>
+                <th>Project Type</th>
+                <th>Project Code</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {projects.map((project, index) => (
-                <tr key={index}>
+                <tr key={project.id}>
+                  <td>{index + 1}</td>
+                  <td>{project.projectType}</td>
+                  <td>{project.projectCode}</td>
+                  <td>{project.name}</td>
+                  <td>{project.description}</td>
                   <td>
-                    <input type="checkbox" />
-                  </td>
-                  <td>{project.project_id}</td>
-                  <td>{project.project_title}</td>
-                  <td>{project.project_category}</td>
-                  <td>{project.project_status}</td>
-                  <td className="edit-btn">Edit</td>
-                  <td>
-                    <div
-                      className="delete-btn"
-                      onClick={() => handleDeleteProject(project.project_id)}
-                    >
+                    <button onClick={() => handleDeleteProject(project.id)}>
                       Delete
-                    </div>
+                    </button>
                   </td>
                 </tr>
               ))}
