@@ -3,6 +3,7 @@ import Header from "../header/header";
 import Footer from "../footer/footer";
 import DataProjects from "./data-projects";
 import "./projects.css";
+import axios from "axios";
 
 function Projects() {
   const [flipCardStates, setFlipCardStates] = useState({});
@@ -12,6 +13,10 @@ function Projects() {
       ...prevStates,
       [projectId]: !prevStates[projectId],
     }));
+  };
+
+  const loadProjects = async () => {
+    const result = await axios.get("");
   };
 
   return (
