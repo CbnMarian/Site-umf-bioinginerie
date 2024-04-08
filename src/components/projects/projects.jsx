@@ -6,7 +6,7 @@ import axios from "axios";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
-
+  // eslint-disable-next-line
   const [projectTypeForPNIII0937, setProjectTypeForPNIII0937] = useState("");
   const [flipCardStates, setFlipCardStates] = useState({});
 
