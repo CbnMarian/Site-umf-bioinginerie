@@ -259,9 +259,10 @@ video {
   transform: translateX(5px);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
   .container1 {
-    width: 90%;
+    width: 50%;
+    height: 100vh;
   }
 
   .videoDiv,

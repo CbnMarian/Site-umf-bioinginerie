@@ -1,16 +1,30 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./admin.css";
 import Menu from "./menu";
 
 function AddProject() {
   const [newProject, setNewProject] = useState({
-    project_id: "",
-    project_title: "",
-    project_category: "",
-    project_status: "",
+    id: "",
+    projectType: "",
+    projectCode: "",
+    name: "",
+    description: "",
   });
-  const handleAddProject = () => {
-    console.log("Noul proiect:", newProject);
+
+  const handleAddProject = async () => {
+    try {
+      await axios.post("http://localhost:8080/addProject", newProject);
+      setNewProject({
+        id: "",
+        projectType: "",
+        projectCode: "",
+        name: "",
+        description: "",
+      });
+    } catch (error) {
+      console.error("Error adding project:", error);
+    }
   };
 
   const handleChange = (e) => {
@@ -28,51 +42,79 @@ function AddProject() {
         <h2 className="add-project-title">Add New Project</h2>
         <form className="add-project-form">
           <div className="form-group">
-            <label htmlFor="project_id">ID</label>
+            <label htmlFor="id">ID</label>
             <input
-              type="text"
-              id="project_id"
-              name="project_id"
-              value={newProject.project_id}
+              type="number"
+              id="id"
+              name="id"
+              value={newProject.id}
               onChange={handleChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="project_title">Title</label>
+            <label htmlFor="projectType" className="left-label">
+              Project Type
+            </label>
+            <select
+              id="projectType"
+              name="projectType"
+              value={newProject.projectType}
+              onChange={handleChange}
+            >
+              <option value="">Select Type</option>
+              <option value="Projects with national funding - coordinator">
+                Projects with national funding - coordinator
+              </option>
+              <option value="Projects with national funding - partner">
+                Projects with national funding - partner
+              </option>
+              <option value="Internal Grants">Internal Grants</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="projectCode" className="left-label">
+              Project Code
+            </label>
             <input
               type="text"
-              id="project_title"
-              name="project_title"
-              value={newProject.project_title}
+              id="projectCode"
+              name="projectCode"
+              value={newProject.projectCode}
               onChange={handleChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="project_category">Category</label>
+            <label htmlFor="name" className="left-label">
+              Name
+            </label>
             <input
               type="text"
-              id="project_category"
-              name="project_category"
-              value={newProject.project_category}
+              id="name"
+              name="name"
+              value={newProject.name}
               onChange={handleChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="project_status">Status</label>
+            <label htmlFor="description" className="left-label">
+              Description
+            </label>
             <input
               type="text"
-              id="project_status"
-              name="project_status"
-              value={newProject.project_status}
+              id="description"
+              name="description"
+              value={newProject.description}
               onChange={handleChange}
+              className="description-input"
             />
           </div>
           <button type="button" onClick={handleAddProject}>
-            Add Project
+            Publish
           </button>
         </form>
       </div>
     </section>
   );
 }
+
 export default AddProject;

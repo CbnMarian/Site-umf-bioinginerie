@@ -40,7 +40,7 @@ function Admin() {
           <table className="data-table">
             <thead>
               <tr>
-                <th></th>
+                <th>ID</th>
                 <th>Project Type</th>
                 <th>Project Code</th>
                 <th>Name</th>
