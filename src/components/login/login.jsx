@@ -1,13 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 import "./login.css";
 import video from "../../assets/video.mp4";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo2.png"; // Am modificat aici
+import logo from "../../assets/logo2.png";
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
+import axios from "axios";
 
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8080/auth/login", {
+        email: username,
+        password: password,
+      });
+      console.log("Login successful:", response.data.accessToken);
+      // Set isLoggedIn to true upon successful login
+      setIsLoggedIn(true);
+    } catch (error) {
+      console.error("Login error:", error);
+      setError("Invalid username or password");
+    }
+  };
+
+  if (isLoggedIn) {
+    return <Navigate to="/admin" />;
+  }
+
   return (
     <div>
       <section>
@@ -33,11 +60,11 @@ function Login() {
 
             <div className="formDiv flex">
               <div className="headerDiv">
-                <img src={logo} alt="logo" /> {/* Am modificat aici */}
+                <img src={logo} alt="logo" />
                 <h3>Log In</h3>
               </div>
 
-              <form action="" className="form grid">
+              <form onSubmit={handleLogin} className="form grid">
                 <div className="inputDiv">
                   <label htmlFor="username">Username</label>
                   <div className="input flex">
@@ -46,6 +73,8 @@ function Login() {
                       type="text"
                       id="username"
                       placeholder="Enter Username"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </div>
                 </div>
@@ -58,9 +87,13 @@ function Login() {
                       type="password"
                       id="password"
                       placeholder="Enter Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                 </div>
+
+                {error && <p className="error">{error}</p>}
 
                 <button type="submit" className="btn1 flex">
                   <span>Login</span>
