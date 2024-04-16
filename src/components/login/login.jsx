@@ -7,7 +7,7 @@ import logo from "../../assets/logo2.png";
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
-import axios from "axios";
+import axios from "../admin/axiosConfig";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -22,9 +22,13 @@ function Login() {
         email: username,
         password: password,
       });
-      console.log("Login successful:", response.data.accessToken);
-      // Set isLoggedIn to true upon successful login
-      setIsLoggedIn(true);
+      const accessToken = response.data.accessToken;
+      if (accessToken) {
+        localStorage.setItem("accessToken", accessToken);
+        setIsLoggedIn(true);
+      } else {
+        setError("Invalid response from server");
+      }
     } catch (error) {
       console.error("Login error:", error);
       setError("Invalid username or password");

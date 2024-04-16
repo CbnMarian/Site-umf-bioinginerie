@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./admin.css";
 import Menu from "./menu";
+import axios from "../admin/axiosConfig";
 
 function AddProject() {
   const [newProject, setNewProject] = useState({
