@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "./axiosConfig";
 import Menu from "./menu";
 import "./admin.css";
 
@@ -12,7 +12,7 @@ function Admin() {
 
   const loadProjects = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/projects");
+      const response = await axios.get("http://localhost:8080/admin/projects");
       setProjects(response.data);
     } catch (error) {
       console.error("Error fetching projects:", error);
@@ -21,7 +21,7 @@ function Admin() {
 
   const handleDeleteProject = async (projectId) => {
     try {
-      await axios.delete(`http://localhost:8080/projects/${projectId}`);
+      await axios.delete(`http://localhost:8080/admin/projects/${projectId}`);
       const updatedProjects = projects.filter(
         (project) => project.id !== projectId
       );
