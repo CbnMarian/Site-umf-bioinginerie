@@ -19,13 +19,21 @@ function Admin() {
     }
   };
 
-  const handleDeleteProject = async (projectId) => {
+  const handleDeleteProject = async (projectName) => {
+    console.log("Project Name:", projectName);
     try {
-      await axios.delete(`http://localhost:8080/admin/projects/${projectId}`);
-      const updatedProjects = projects.filter(
-        (project) => project.id !== projectId
+      const token = localStorage.getItem("accessToken");
+      await axios.delete(
+        `http://localhost:8080/deleteProjectByName/${projectName}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
-      setProjects(updatedProjects);
+      setProjects((prevProjects) =>
+        prevProjects.filter((project) => project.name !== projectName)
+      );
     } catch (error) {
       console.error("Error deleting project:", error);
     }
@@ -57,7 +65,7 @@ function Admin() {
                   <td>{project.name}</td>
                   <td>{project.description}</td>
                   <td>
-                    <button onClick={() => handleDeleteProject(project.id)}>
+                    <button onClick={() => handleDeleteProject(project.name)}>
                       Delete
                     </button>
                   </td>

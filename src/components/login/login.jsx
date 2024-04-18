@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import "./login.css";
 import video from "../../assets/video.mp4";
-import { Link } from "react-router-dom";
 import logo from "../../assets/logo2.png";
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
@@ -31,7 +30,7 @@ function Login() {
       }
     } catch (error) {
       console.error("Login error:", error);
-      setError("Invalid username or password");
+      setError("Invalid username password combination");
     }
   };
 
@@ -97,7 +96,7 @@ function Login() {
                   </div>
                 </div>
 
-                {error && <p className="error">{error}</p>}
+                {error && <p className="errorMessage">{error}</p>}
 
                 <button type="submit" className="btn1 flex">
                   <span>Login</span>
