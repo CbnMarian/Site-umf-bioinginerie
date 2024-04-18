@@ -53,7 +53,7 @@ function Admin() {
                 <th>Project Code</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Action</th>
+                <th>Delete Project</th>
               </tr>
             </thead>
             <tbody>
@@ -65,9 +65,12 @@ function Admin() {
                   <td>{project.name}</td>
                   <td>{project.description}</td>
                   <td>
-                    <button onClick={() => handleDeleteProject(project.name)}>
+                    <div
+                      className="delete-btn"
+                      onClick={() => handleDeleteProject(project.name)}
+                    >
                       Delete
-                    </button>
+                    </div>
                   </td>
                 </tr>
               ))}
