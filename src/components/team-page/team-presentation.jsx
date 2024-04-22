@@ -1,4 +1,5 @@
 import "./team-presentation.css";
+import teamPhoto from "../../assets/team-photo.jpg";
 import member1 from "../../assets/Verestiuc.png";
 import member2 from "../../assets/blank.png";
 import "react-multi-carousel/lib/styles.css";
@@ -10,8 +11,13 @@ const Team = () => {
     <section id="container">
       <Header />
       <div id="main">
+        <div className="team-photo">
+          <div class="overlay">
+            <h1 class="title">SCIENTIFIC TEAM</h1>
+          </div>
+          <img src={teamPhoto} alt="" />
+        </div>
         <div className="team-leader">
-          <h1 className="title">SCIENTIFIC TEAM</h1>
           <div className="team-member">
             <img src={member1} alt="Team Member: Liliana Verestiuc" />
             <h3>
