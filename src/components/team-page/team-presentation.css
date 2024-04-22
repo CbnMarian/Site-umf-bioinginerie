@@ -1,3 +1,33 @@
+.team-photo {
+  position: relative;
+  margin: 15px 0;
+}
+
+.team-photo .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.team-photo .title {
+  font-size: 7vw;
+  z-index: 100;
+}
+
+.team-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(70%);
+}
+
 .title {
   font-size: 27px;
   padding: 40px 0;
