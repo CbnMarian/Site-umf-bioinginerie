@@ -1,71 +1,54 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./team-presentation.css";
 import teamPhoto from "../../assets/team-photo.jpg";
-import member1 from "../../assets/Verestiuc.png";
-import member2 from "../../assets/blank.png";
-import "react-multi-carousel/lib/styles.css";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 
-const Team = () => {
+function Team() {
+  const [teamMembers, setTeamMembers] = useState([]);
+
+  useEffect(() => {
+    loadTeamMembers();
+  }, []);
+
+  const loadTeamMembers = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/allTeam");
+      setTeamMembers(response.data);
+    } catch (error) {
+      console.error("Error fetching team members:", error);
+    }
+  };
+
   return (
     <section id="container">
       <Header />
       <div id="main">
         <div className="team-photo">
-          <div class="overlay">
-            <h1 class="title">SCIENTIFIC TEAM</h1>
+          <div className="overlay">
+            <h1 className="title">SCIENTIFIC TEAM</h1>
           </div>
-          <img src={teamPhoto} alt="" />
-        </div>
-        <div className="team-leader">
-          <div className="team-member">
-            <img src={member1} alt="Team Member: Liliana Verestiuc" />
-            <h3>
-              <span className="title-prefix">Prof. dr.</span> Liliana Verestiuc
-            </h3>
-            <p>
-              <a href="mailto:liliana.verestiuc@umfiasi.ro">
-                liliana.verestiuc@umfiasi.ro
-              </a>
-            </p>
-          </div>
+          <img src={teamPhoto} alt="Team Photo" />
         </div>
 
         <div className="members member">
-          <div className="team-member">
-            <img src={member2} alt="Team Member: Alice Smith" />
-            <h3>Vera Balan</h3>
-          </div>
-
-          <div className="team-member">
-            <img src={member2} alt="Team Member: Alice Smith" />
-            <h3>Maria Butnaru</h3>
-          </div>
-
-          <div className="team-member">
-            <img src={member2} alt="Team Member: Alice Smith" />
-            <h3>Isabella Cobzariu</h3>
-          </div>
-
-          <div className="team-member">
-            <img src={member2} alt="Team Member: Alice Smith" />
-            <h3>Florina Daniela Ivan</h3>
-          </div>
-
-          <div className="team-member">
-            <img src={member2} alt="Team Member: Alice Smith" />
-            <h3>Andreea Luca</h3>
-          </div>
-
-          <div className="team-member">
-            <img src={member2} alt="Team Member: Alice Smith" />
-            <h3>Vlad Ursachi</h3>
-          </div>
+          {teamMembers.map((member) => (
+            <div className="team-member" key={member.id}>
+              <img
+                src={`data:image/jpeg;base64,${member.photo}`}
+                alt={`Team Member: ${member.name}`}
+              />
+              <h3>
+                <span className="title-prefix"></span> {member.name}
+              </h3>
+            </div>
+          ))}
         </div>
       </div>
       <Footer />
     </section>
   );
-};
+}
 
 export default Team;
