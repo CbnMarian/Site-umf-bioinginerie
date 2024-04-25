@@ -1,3 +1,23 @@
+.memberName {
+  padding: 15px 0;
+  margin: 0;
+}
+
+.download-cv-button {
+  margin: 0;
+}
+
+.arrow {
+  width: 20px !important;
+  height: auto !important;
+  rotate: 180deg;
+}
+.pdf-icon {
+  width: 30px !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+}
 .team-photo {
   position: relative;
   margin: 15px 0;
@@ -54,24 +74,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
-.team-leader {
-  padding-bottom: 100px;
-}
-.team-member,
-.team-leader,
-h3 {
-  font-size: 18px;
-}
-.team-member,
-.team-leader,
-p {
-  font-size: 14px;
-}
-
-.team-member img,
-.team-leader img {
+.team-member img {
   width: 250px;
   height: 250px;
   object-fit: cover;
