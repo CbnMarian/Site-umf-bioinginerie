@@ -1,47 +1,80 @@
-import DataUser from "./data-users";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "./axiosConfig";
 import Menu from "./menu";
 import "./admin.css";
 
 function AllUsers() {
-  const [users, setUsers] = useState(DataUser);
+  const [teamMembers, setTeamMembers] = useState([]);
 
-  const handleDeleteUser = (userId) => {
-    const updatedUsers = users.filter((user) => user.user_id !== userId);
-    setUsers(updatedUsers);
+  useEffect(() => {
+    loadTeamMembers();
+  }, []);
+
+  const loadTeamMembers = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/allTeam");
+      setTeamMembers(response.data);
+    } catch (error) {
+      console.error("Error fetching team members:", error);
+    }
+  };
+
+  const handleDeleteUser = async (userId) => {
+    try {
+      const token = localStorage.getItem("accessToken");
+      await axios.delete(`http://localhost:8080/deleteUser/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setTeamMembers((prevUsers) =>
+        prevUsers.filter((user) => user.id !== userId)
+      );
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
+
+  const handleViewCv = (cvId) => {
+    window.open(`http://localhost:8080/download-cv/${cvId}`, "_blank");
   };
 
   return (
     <section>
       <Menu />
       <div className="table-main">
-        <h2 className="all-projects-title">All Users</h2>
+        <h2 className="all-team-members-title">All Team Members</h2>
         <div className="table-container">
           <table className="data-table">
             <thead>
               <tr>
-                <td></td>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Photo</th>
                 <th>CV</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Delete User</th>
               </tr>
             </thead>
             <tbody>
-              {users.map((user, index) => (
-                <tr key={index}>
+              {teamMembers.map((member, index) => (
+                <tr key={member.id}>
+                  <td>{index + 1}</td>
+                  <td>{member.name}</td>
                   <td>
-                    <input type="checkbox" />
+                    <img src={member.photo} alt={member.name} />
                   </td>
-                  <td>{user.user_id}</td>
-                  <td>{user.user_name}</td>
-                  <td>{user.user_cv}</td>
-                  <td className="edit-btn">Edit</td>
                   <td>
                     <div
                       className="delete-btn"
-                      onClick={() => handleDeleteUser(user.user_id)}
+                      onClick={() => handleViewCv(member.id)}
+                    >
+                      View CV
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      className="delete-btn"
+                      onClick={() => handleDeleteUser(member.id)}
                     >
                       Delete
                     </div>
