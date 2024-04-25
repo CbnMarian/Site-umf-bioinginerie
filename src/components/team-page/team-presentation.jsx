@@ -4,6 +4,8 @@ import "./team-presentation.css";
 import teamPhoto from "../../assets/team-photo.jpg";
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import DownloadIcon from "@mui/icons-material/Download";
+import CapitalizeName from "../functions";
 
 function Team() {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -29,7 +31,7 @@ function Team() {
           <div className="overlay">
             <h1 className="title">SCIENTIFIC TEAM</h1>
           </div>
-          <img src={teamPhoto} alt="Team Photo" />
+          <img src={teamPhoto} alt="TeamPhoto" />
         </div>
 
         <div className="members member">
@@ -39,9 +41,12 @@ function Team() {
                 src={`data:image/jpeg;base64,${member.photo}`}
                 alt={`Team Member: ${member.name}`}
               />
-              <h3>
-                <span className="title-prefix"></span> {member.name}
-              </h3>
+              <div>
+                <h3 className="memberName">{CapitalizeName(member.name)}</h3>
+                <button className="download-cv-button">
+                  Download CV <DownloadIcon />
+                </button>
+              </div>
             </div>
           ))}
         </div>
