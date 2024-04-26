@@ -22,6 +22,9 @@ function Team() {
       console.error("Error fetching team members:", error);
     }
   };
+  const handleViewCv = (cvId) => {
+    window.open(`http://localhost:8080/download-cv/${cvId}`, "_blank");
+  };
 
   return (
     <section id="container">
@@ -43,7 +46,10 @@ function Team() {
               />
               <div>
                 <h3 className="memberName">{CapitalizeName(member.name)}</h3>
-                <button className="download-cv-button">
+                <button
+                  className="download-cv-button"
+                  onClick={() => handleViewCv(member.id)}
+                >
                   Download CV <DownloadIcon />
                 </button>
               </div>
