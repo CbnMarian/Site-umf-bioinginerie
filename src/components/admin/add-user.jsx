@@ -9,9 +9,15 @@ function AddUser() {
     photo: null,
     cv: null,
   });
+  const [error, setError] = useState("");
 
   const handleAddUser = async () => {
     try {
+      if (!newUser.name || !newUser.photo || !newUser.cv) {
+        setError("Please fill in all fields: name, photo, and CV.");
+        return;
+      }
+
       const formData = new FormData();
       formData.append("name", newUser.name);
       formData.append("photo", newUser.photo);
@@ -28,8 +34,12 @@ function AddUser() {
         photo: null,
         cv: null,
       });
+      setError("");
+      document.getElementById("photo").value = "";
+      document.getElementById("cv").value = "";
     } catch (error) {
       console.error("Error adding user:", error);
+      setError("Failed to add user. Please try again later.");
     }
   };
 
@@ -77,6 +87,12 @@ function AddUser() {
           <div className="form-group">
             <label htmlFor="cv">CV</label>
             <input type="file" id="cv" name="cv" onChange={handleChange} />
+          </div>
+          <div
+            className="error-message"
+            style={{ color: "red", marginTop: "10px" }}
+          >
+            {error}
           </div>
           <button type="button" onClick={handleAddUser}>
             Add User
