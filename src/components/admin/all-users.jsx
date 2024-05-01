@@ -19,17 +19,15 @@ function AllUsers() {
     }
   };
 
-  const handleDeleteUser = async (userId) => {
+  const handleDeleteUser = async (id) => {
     try {
       const token = localStorage.getItem("accessToken");
-      await axios.delete(`http://localhost:8080/deleteUser/${userId}`, {
+      await axios.delete(`http://localhost:8080/delete-team/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      setTeamMembers((prevUsers) =>
-        prevUsers.filter((user) => user.id !== userId)
-      );
+      setTeamMembers((prevUsers) => prevUsers.filter((user) => user.id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);
     }
@@ -61,7 +59,10 @@ function AllUsers() {
                   <td>{index + 1}</td>
                   <td>{member.name}</td>
                   <td>
-                    <img src={member.photo} alt={member.name} />
+                    <img
+                      src={`data:image/jpeg;base64,${member.photo}`}
+                      alt={`Team Member: ${member.name}`}
+                    />
                   </td>
                   <td>
                     <div
