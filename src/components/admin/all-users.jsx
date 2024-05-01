@@ -22,7 +22,7 @@ function AllUsers() {
   const handleDeleteUser = async (id) => {
     try {
       const token = localStorage.getItem("accessToken");
-      await axios.delete(`http://localhost:8080/delete-team/${id}`, {
+      await axios.delete(`http://localhost:8080/delete-member/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
