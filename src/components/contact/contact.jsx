@@ -51,15 +51,15 @@ function Contact(props) {
               </ul>
             </div>
             <iframe
-              id="gmap_canvas"
-              title="map"
+              title="Google Map"
+              src="https://maps.google.com/maps?q=11%20Kogalniceanu%20street,%20Iasi,%20Romania&t=&z=14&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="400"
               frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
-              src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=11%20Kogalniceanu%20street,%20Iasi,%20Romania+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
             ></iframe>
           </div>
         </section>
