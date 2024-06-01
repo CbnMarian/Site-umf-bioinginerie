@@ -1,0 +1,9 @@
+[build]
+  command = "npm run prebuild && npm run build"
+  publish = "build"
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+[context.production]
+  command = "npm ci --legacy-peer-deps && npm run build"
