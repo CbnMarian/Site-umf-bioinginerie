@@ -3,7 +3,7 @@ import Header from "../header/header";
 import Footer from "../footer/footer";
 import "./contact.css";
 
-function Contact(props) {
+function Contact() {
   return (
     <section id="container">
       <Header />
@@ -50,17 +50,6 @@ function Contact(props) {
                 <li>Lab. Simona Harhătă</li>
               </ul>
             </div>
-            <iframe
-              title="Google Map"
-              src="https://maps.google.com/maps?q=11%20Kogalniceanu%20street,%20Iasi,%20Romania&t=&z=14&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="400"
-              frameBorder="0"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              aria-hidden="false"
-              tabIndex="0"
-            ></iframe>
           </div>
         </section>
       </div>
